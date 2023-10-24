@@ -1,0 +1,118 @@
+.root-container {
+    width: 99vw;
+    height: 99vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth-box {
+    width: 1252px;
+    height: 683px;
+    border-radius: 16px;
+    display: flex;
+    flex-flow: row;
+    align-items: stretch;
+    box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.25);
+    background-color: white;
+}
+
+.auth-box-img {
+    height: 100%;
+    width: 50%;
+    background-image: url(../../../assets/images/auth-image.jpeg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-radius: 16px 0 0 16px;
+
+    img {
+        height: 100%;
+        border-radius: 16px 0 0 16px;
+    }
+}
+
+.auth-box-fields {
+    margin-top: 101px;
+    margin-left: 135px;
+    height: 100%;
+    width: 50%;
+    display: flex;
+    // justify-content: center;
+    // align-items: center;
+
+    h1 {
+        color: #3E3E3E;
+        font-family: Inter;
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        margin-bottom: 0;
+    }
+
+    h3 {
+        color: #666;
+        font-family: Inter;
+        font-size: 25px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        margin-bottom: 40px;
+        margin-top: 0;
+    }
+
+    h3 span {
+        color: #2EDE7B;
+        font-family: Inter;
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+
+    input {
+        border-radius: 8px;
+        background: #EBEBEB;
+        width: 320px;
+        height: 40px;
+        flex-shrink: 0;
+        border: 0;
+        display: block;
+        margin: 8px 0 20px 0;
+        padding-left: 26px;
+    }
+
+    input::placeholder {
+        color: #8e8e8e;
+        font-family: Inter;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    button {
+        width: 168px;
+        height: 50px;
+        flex-shrink: 0;
+        border-radius: 30px;
+        background: #2EDE7B;
+        border: 0;
+        color: #FFF;
+        font-family: Inter;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        margin-top: 20px;
+    }
+
+    label {
+        color: #666;
+        font-family: Inter;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+    }
+}
