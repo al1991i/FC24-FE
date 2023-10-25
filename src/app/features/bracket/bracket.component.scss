@@ -1,0 +1,95 @@
+.root-container {
+    height: 85vh;
+    padding: 0 90px;
+    display: flex;
+
+    .players {
+        flex-grow: 1;
+        height: 95%;
+        background-color: #ebebebcc;
+        border-radius: 20px;
+        margin-right: 12px;
+    }
+
+    .bracket {
+        flex-grow: 11;
+        height: 95%;
+        background-color: #ebebebcc;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+
+        .bracket-tree {
+            height: 90%;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            button {
+                border-radius: 30px;
+                background: #2EDE7B;
+                width: 168px;
+                height: 50px;
+                color: #FFF;
+                border: 0;
+                font-family: Inter;
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: normal;
+            }
+        }
+    }
+}
+
+.box-header {
+    display: flex;
+    justify-content: center;
+    margin: 50px;
+
+    span {
+        color: #666;
+        font-family: Inter;
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        border-bottom: 2px solid #2EDE7B;
+    }
+}
+
+.player-item {
+    margin: 12px 32px;
+    padding: 8px 18px;
+    border-radius: 50px;
+    background: #FFF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    img {
+        width: 50px;
+        height: 50px;
+        flex-shrink: 0;
+        width: 50px;
+        height: 50px;
+        flex-shrink: 0;
+        border-radius: 50px;
+    }
+
+    span {
+        margin: 0 28px;
+        color: #151716;
+        font-family: Inter;
+        font-size: 25px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+    }
+
+    div {
+        display: flex;
+        align-items: center;
+    }
+}

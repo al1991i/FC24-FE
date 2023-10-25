@@ -1,0 +1,114 @@
+@media only screen and (min-width: 768px) {
+    nav {
+        padding: 0 0;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    nav {
+        padding: 0 50px;
+    }
+}
+
+@media only screen and (min-width: 1700px) {
+    nav {
+        padding: 0 445px;
+    }
+}
+
+header {
+    display: flex;
+    justify-content: end;
+    flex-direction: row;
+    align-items: center;
+    margin: 22px 90px;
+}
+
+nav {
+    // margin: 0 250px;
+    flex-grow: 2;
+    display: flex;
+    justify-content: end;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    list-style-type: none;
+    display: inline;
+}
+
+nav a {
+    text-decoration: none;
+    padding: .8rem 0;
+    text-align: center;
+    margin-right: 70px;
+    color: #000;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+nav li.active a {
+    color: #2EDE7B;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.settings {
+    display: flex;
+    justify-content: end;
+    flex-grow: 1;
+}
+
+.notification {
+    display: flex;
+    // width: 100px;
+    align-items: center;
+}
+
+.notification div {
+    display: flex;
+}
+
+.notification i {
+    color: #4A4A4A;
+    // font-family: Font Awesome 6 Free;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.notification-indicator {
+    width: 10px;
+    height: 10px;
+    background-color: #2EDE7B;
+    border-radius: 5px;
+
+}
+
+.team-image {
+    width: 45px;
+    height: 55px;
+    // border-radius: 30px;
+    margin-left: 18px;
+}
+
+.profile-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 40px;
+    margin-left: 18px;
+    border-radius: 50px;
+    border: 3px solid #2EDE7B;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
