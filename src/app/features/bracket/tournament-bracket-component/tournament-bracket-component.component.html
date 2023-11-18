@@ -1,0 +1,26 @@
+<ul>
+    <li *ngFor="let child of treeData">
+        <div class="node" [ngStyle]="{
+          'border-left': selectedNodeId == child.id ? '1px solid #cbcbcb' : '6px solid' + child.color,
+          'background-color': selectedNodeId == child.id ? child.color : '#ffffff',
+          color: selectedNodeId == child.id ? '#ffffff' : child.color
+        }">
+            <!-- <span class="node-title" [ngStyle]="{
+            color: selectedNodeId == child.id ? '#ffffff' : '#666'
+          }" (click)="childNode = child; onNodeSelected(selectedNodeId == child.id, child.id)">{{ child.name }}</span>
+            <i [ngClass]="[child.icon]"></i>
+            <span [ngStyle]="{
+            color: selectedNodeId == child.id ? '#ffffff' : '#666'
+          }">{{ (child.children ? child.children.length : 0) | number : "2.0" }}</span> -->
+          <div class="player-item">
+            <div>
+                <img src="../../../assets/images/9cf88cc006fd183491fc10fda59083a4.jpeg" alt="">
+                <span>Ali Alkhatib</span>
+            </div>
+            <img src="../../../assets/images/21d9bc2c79d44ba5dc56d7253a1a5062.png" alt="">
+        </div>
+        </div>
+        <app-tournament-bracket-component *ngIf="child.children && child.children.length > 0"
+            [treeData]="child.children" [editable]="true"></app-tournament-bracket-component>
+    </li>
+</ul>

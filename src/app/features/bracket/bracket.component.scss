@@ -18,14 +18,16 @@
         border-radius: 20px;
         display: flex;
         flex-direction: column;
-
+        max-width: 80%;
+        
         .bracket-tree {
             height: 90%;
             border-radius: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-
+            flex-direction: column;
+            overflow-x: scroll;
             button {
                 border-radius: 30px;
                 background: #2EDE7B;
