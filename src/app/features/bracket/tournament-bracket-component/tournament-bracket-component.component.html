@@ -1,18 +1,18 @@
-<ul>
+<!-- <ul>
     <li *ngFor="let child of treeData">
         <div class="node" [ngStyle]="{
           'border-left': selectedNodeId == child.id ? '1px solid #cbcbcb' : '6px solid' + child.color,
           'background-color': selectedNodeId == child.id ? child.color : '#ffffff',
           color: selectedNodeId == child.id ? '#ffffff' : child.color
-        }">
-            <!-- <span class="node-title" [ngStyle]="{
+        }"> -->
+<!-- <span class="node-title" [ngStyle]="{
             color: selectedNodeId == child.id ? '#ffffff' : '#666'
           }" (click)="childNode = child; onNodeSelected(selectedNodeId == child.id, child.id)">{{ child.name }}</span>
             <i [ngClass]="[child.icon]"></i>
             <span [ngStyle]="{
             color: selectedNodeId == child.id ? '#ffffff' : '#666'
           }">{{ (child.children ? child.children.length : 0) | number : "2.0" }}</span> -->
-          <div class="player-item">
+<!-- <div class="player-item">
             <div>
                 <img src="../../../assets/images/9cf88cc006fd183491fc10fda59083a4.jpeg" alt="">
                 <span>Ali Alkhatib</span>
@@ -23,4 +23,615 @@
         <app-tournament-bracket-component *ngIf="child.children && child.children.length > 0"
             [treeData]="child.children" [editable]="true"></app-tournament-bracket-component>
     </li>
-</ul>
+</ul> -->
+
+<div class="container">
+  <div class="tournament-bracket tournament-bracket--rounded">
+    <div class="tournament-bracket__round tournament-bracket__round--quarterfinals">
+      <h3 class="tournament-bracket__round-title">Round 16</h3>
+      <ul class="tournament-bracket__list">
+        <li class="tournament-bracket__item">
+          <div class="tournament-bracket__match" tabindex="0">
+            <div class="player-item container1">
+              <div class="neumorphism-1">
+                <span>Ali Alkhatib</span>
+                <span
+                  style="font-size: 12px; padding: 2px 8px; border-radius: 15px; background-color: #2EDE7B; color: white; text-align: center;">In
+                  -Querter</span>
+              </div>
+              <div class="neumorphism-2">
+                <div class="neumorphism-3">
+                  <img src="../../../assets/images/21d9bc2c79d44ba5dc56d7253a1a5062.png" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="tournament-bracket__item">
+          <div class="tournament-bracket__match" tabindex="0">
+            <div class="player-item container1">
+              <div class="neumorphism-1">
+                <span>Ali Alkhatib</span>
+                <span
+                  style="font-size: 12px; padding: 2px 8px; border-radius: 15px; background-color: #2EDE7B; color: white; text-align: center;">In
+                  -Querter</span>
+              </div>
+              <div class="neumorphism-2">
+                <div class="neumorphism-3">
+                  <img src="../../../assets/images/21d9bc2c79d44ba5dc56d7253a1a5062.png" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="tournament-bracket__item">
+          <div class="tournament-bracket__match" tabindex="0">
+            <div class="player-item container1">
+              <div class="neumorphism-1">
+                <span>Ali Alkhatib</span>
+                <span
+                  style="font-size: 12px; padding: 2px 8px; border-radius: 15px; background-color: #2EDE7B; color: white; text-align: center;">In
+                  -Querter</span>
+              </div>
+              <div class="neumorphism-2">
+                <div class="neumorphism-3">
+                  <img src="../../../assets/images/21d9bc2c79d44ba5dc56d7253a1a5062.png" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="tournament-bracket__item">
+          <div class="tournament-bracket__match" tabindex="0">
+            <div class="player-item container1">
+              <div class="neumorphism-1">
+                <span>Ali Alkhatib</span>
+                <span
+                  style="font-size: 12px; padding: 2px 8px; border-radius: 15px; background-color: #2EDE7B; color: white; text-align: center;">In
+                  -Querter</span>
+              </div>
+              <div class="neumorphism-2">
+                <div class="neumorphism-3">
+                  <img src="../../../assets/images/21d9bc2c79d44ba5dc56d7253a1a5062.png" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="tournament-bracket__item">
+          <div class="tournament-bracket__match" tabindex="0">
+            <div class="player-item container1">
+              <div class="neumorphism-1">
+                <span>Ali Alkhatib</span>
+                <span
+                  style="font-size: 12px; padding: 2px 8px; border-radius: 15px; background-color: #2EDE7B; color: white; text-align: center;">In
+                  -Querter</span>
+              </div>
+              <div class="neumorphism-2">
+                <div class="neumorphism-3">
+                  <img src="../../../assets/images/21d9bc2c79d44ba5dc56d7253a1a5062.png" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="tournament-bracket__item">
+          <div class="tournament-bracket__match" tabindex="0">
+            <div class="player-item container1">
+              <div class="neumorphism-1">
+                <span>Ali Alkhatib</span>
+                <span
+                  style="font-size: 12px; padding: 2px 8px; border-radius: 15px; background-color: #2EDE7B; color: white; text-align: center;">In
+                  -Querter</span>
+              </div>
+              <div class="neumorphism-2">
+                <div class="neumorphism-3">
+                  <img src="../../../assets/images/21d9bc2c79d44ba5dc56d7253a1a5062.png" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+
+        <li class="tournament-bracket__item">
+          <div class="tournament-bracket__match" tabindex="0">
+            <div class="player-item container1">
+              <div class="neumorphism-1">
+                <span>Ali Alkhatib</span>
+                <span
+                  style="font-size: 12px; padding: 2px 8px; border-radius: 15px; background-color: #2EDE7B; color: white; text-align: center;">In
+                  -Querter</span>
+              </div>
+              <div class="neumorphism-2">
+                <div class="neumorphism-3">
+                  <img src="../../../assets/images/21d9bc2c79d44ba5dc56d7253a1a5062.png" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="tournament-bracket__item">
+          <div class="tournament-bracket__match" tabindex="0">
+            <div class="player-item container1">
+              <div class="neumorphism-1">
+                <span>Ali Alkhatib</span>
+                <span
+                  style="font-size: 12px; padding: 2px 8px; border-radius: 15px; background-color: #2EDE7B; color: white; text-align: center;">In
+                  -Querter</span>
+              </div>
+              <div class="neumorphism-2">
+                <div class="neumorphism-3">
+                  <img src="../../../assets/images/21d9bc2c79d44ba5dc56d7253a1a5062.png" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="tournament-bracket__item">
+          <div class="tournament-bracket__match" tabindex="0">
+            <div class="player-item container1">
+              <div class="neumorphism-1">
+                <span>Ali Alkhatib</span>
+                <span
+                  style="font-size: 12px; padding: 2px 8px; border-radius: 15px; background-color: #2EDE7B; color: white; text-align: center;">In
+                  -Querter</span>
+              </div>
+              <div class="neumorphism-2">
+                <div class="neumorphism-3">
+                  <img src="../../../assets/images/21d9bc2c79d44ba5dc56d7253a1a5062.png" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="tournament-bracket__item">
+          <div class="tournament-bracket__match" tabindex="0">
+            <div class="player-item container1">
+              <div class="neumorphism-1">
+                <span>Ali Alkhatib</span>
+                <span
+                  style="font-size: 12px; padding: 2px 8px; border-radius: 15px; background-color: #2EDE7B; color: white; text-align: center;">In
+                  -Querter</span>
+              </div>
+              <div class="neumorphism-2">
+                <div class="neumorphism-3">
+                  <img src="../../../assets/images/21d9bc2c79d44ba5dc56d7253a1a5062.png" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="tournament-bracket__item">
+          <div class="tournament-bracket__match" tabindex="0">
+            <div class="player-item container1">
+              <div class="neumorphism-1">
+                <span>Ali Alkhatib</span>
+                <span
+                  style="font-size: 12px; padding: 2px 8px; border-radius: 15px; background-color: #2EDE7B; color: white; text-align: center;">In
+                  -Querter</span>
+              </div>
+              <div class="neumorphism-2">
+                <div class="neumorphism-3">
+                  <img src="../../../assets/images/21d9bc2c79d44ba5dc56d7253a1a5062.png" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="tournament-bracket__item">
+          <div class="tournament-bracket__match" tabindex="0">
+            <div class="player-item container1">
+              <div class="neumorphism-1">
+                <span>Ali Alkhatib</span>
+                <span
+                  style="font-size: 12px; padding: 2px 8px; border-radius: 15px; background-color: #2EDE7B; color: white; text-align: center;">In
+                  -Querter</span>
+              </div>
+              <div class="neumorphism-2">
+                <div class="neumorphism-3">
+                  <img src="../../../assets/images/21d9bc2c79d44ba5dc56d7253a1a5062.png" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="tournament-bracket__item">
+          <div class="tournament-bracket__match" tabindex="0">
+            <div class="player-item container1">
+              <div class="neumorphism-1">
+                <span>Ali Alkhatib</span>
+                <span
+                  style="font-size: 12px; padding: 2px 8px; border-radius: 15px; background-color: #2EDE7B; color: white; text-align: center;">In
+                  -Querter</span>
+              </div>
+              <div class="neumorphism-2">
+                <div class="neumorphism-3">
+                  <img src="../../../assets/images/21d9bc2c79d44ba5dc56d7253a1a5062.png" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="tournament-bracket__item">
+          <div class="tournament-bracket__match" tabindex="0">
+            <div class="player-item container1">
+              <div class="neumorphism-1">
+                <span>Ali Alkhatib</span>
+                <span
+                  style="font-size: 12px; padding: 2px 8px; border-radius: 15px; background-color: #2EDE7B; color: white; text-align: center;">In
+                  -Querter</span>
+              </div>
+              <div class="neumorphism-2">
+                <div class="neumorphism-3">
+                  <img src="../../../assets/images/21d9bc2c79d44ba5dc56d7253a1a5062.png" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+
+        <li class="tournament-bracket__item">
+          <div class="tournament-bracket__match" tabindex="0">
+            <div class="player-item container1">
+              <div class="neumorphism-1">
+                <span>Ali Alkhatib</span>
+                <span
+                  style="font-size: 12px; padding: 2px 8px; border-radius: 15px; background-color: #2EDE7B; color: white; text-align: center;">In
+                  -Querter</span>
+              </div>
+              <div class="neumorphism-2">
+                <div class="neumorphism-3">
+                  <img src="../../../assets/images/21d9bc2c79d44ba5dc56d7253a1a5062.png" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="tournament-bracket__item">
+          <div class="tournament-bracket__match" tabindex="0">
+            <div class="player-item container1">
+              <div class="neumorphism-1">
+                <span>Ali Alkhatib</span>
+                <span
+                  style="font-size: 12px; padding: 2px 8px; border-radius: 15px; background-color: #2EDE7B; color: white; text-align: center;">In
+                  -Querter</span>
+              </div>
+              <div class="neumorphism-2">
+                <div class="neumorphism-3">
+                  <img src="../../../assets/images/21d9bc2c79d44ba5dc56d7253a1a5062.png" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        
+      </ul>
+    </div>
+    <div class="tournament-bracket__round tournament-bracket__round--quarterfinals">
+      <h3 class="tournament-bracket__round-title">Round 8</h3>
+      <ul class="tournament-bracket__list">
+        
+        <li class="tournament-bracket__item">
+          <div class="tournament-bracket__match" tabindex="0">
+            <div class="player-item container1">
+              <div class="neumorphism-1">
+                <span>Ali Alkhatib</span>
+                <span
+                  style="font-size: 12px; padding: 2px 8px; border-radius: 15px; background-color: #2EDE7B; color: white; text-align: center;">In
+                  -Querter</span>
+              </div>
+              <div class="neumorphism-2">
+                <div class="neumorphism-3">
+                  <img src="../../../assets/images/21d9bc2c79d44ba5dc56d7253a1a5062.png" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="tournament-bracket__item">
+          <div class="tournament-bracket__match" tabindex="0">
+            <div class="player-item container1">
+              <div class="neumorphism-1">
+                <span>Ali Alkhatib</span>
+                <span
+                  style="font-size: 12px; padding: 2px 8px; border-radius: 15px; background-color: #2EDE7B; color: white; text-align: center;">In
+                  -Querter</span>
+              </div>
+              <div class="neumorphism-2">
+                <div class="neumorphism-3">
+                  <img src="../../../assets/images/21d9bc2c79d44ba5dc56d7253a1a5062.png" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="tournament-bracket__item">
+          <div class="tournament-bracket__match" tabindex="0">
+            <div class="player-item container1">
+              <div class="neumorphism-1">
+                <span>Ali Alkhatib</span>
+                <span
+                  style="font-size: 12px; padding: 2px 8px; border-radius: 15px; background-color: #2EDE7B; color: white; text-align: center;">In
+                  -Querter</span>
+              </div>
+              <div class="neumorphism-2">
+                <div class="neumorphism-3">
+                  <img src="../../../assets/images/21d9bc2c79d44ba5dc56d7253a1a5062.png" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="tournament-bracket__item">
+          <div class="tournament-bracket__match" tabindex="0">
+            <div class="player-item container1">
+              <div class="neumorphism-1">
+                <span>Ali Alkhatib</span>
+                <span
+                  style="font-size: 12px; padding: 2px 8px; border-radius: 15px; background-color: #2EDE7B; color: white; text-align: center;">In
+                  -Querter</span>
+              </div>
+              <div class="neumorphism-2">
+                <div class="neumorphism-3">
+                  <img src="../../../assets/images/21d9bc2c79d44ba5dc56d7253a1a5062.png" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="tournament-bracket__item">
+          <div class="tournament-bracket__match" tabindex="0">
+            <div class="player-item container1">
+              <div class="neumorphism-1">
+                <span>Ali Alkhatib</span>
+                <span
+                  style="font-size: 12px; padding: 2px 8px; border-radius: 15px; background-color: #2EDE7B; color: white; text-align: center;">In
+                  -Querter</span>
+              </div>
+              <div class="neumorphism-2">
+                <div class="neumorphism-3">
+                  <img src="../../../assets/images/21d9bc2c79d44ba5dc56d7253a1a5062.png" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="tournament-bracket__item">
+          <div class="tournament-bracket__match" tabindex="0">
+            <div class="player-item container1">
+              <div class="neumorphism-1">
+                <span>Ali Alkhatib</span>
+                <span
+                  style="font-size: 12px; padding: 2px 8px; border-radius: 15px; background-color: #2EDE7B; color: white; text-align: center;">In
+                  -Querter</span>
+              </div>
+              <div class="neumorphism-2">
+                <div class="neumorphism-3">
+                  <img src="../../../assets/images/21d9bc2c79d44ba5dc56d7253a1a5062.png" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+
+        <li class="tournament-bracket__item">
+          <div class="tournament-bracket__match" tabindex="0">
+            <div class="player-item container1">
+              <div class="neumorphism-1">
+                <span>Ali Alkhatib</span>
+                <span
+                  style="font-size: 12px; padding: 2px 8px; border-radius: 15px; background-color: #2EDE7B; color: white; text-align: center;">In
+                  -Querter</span>
+              </div>
+              <div class="neumorphism-2">
+                <div class="neumorphism-3">
+                  <img src="../../../assets/images/21d9bc2c79d44ba5dc56d7253a1a5062.png" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="tournament-bracket__item">
+          <div class="tournament-bracket__match" tabindex="0">
+            <div class="player-item container1">
+              <div class="neumorphism-1">
+                <span>Ali Alkhatib</span>
+                <span
+                  style="font-size: 12px; padding: 2px 8px; border-radius: 15px; background-color: #2EDE7B; color: white; text-align: center;">In
+                  -Querter</span>
+              </div>
+              <div class="neumorphism-2">
+                <div class="neumorphism-3">
+                  <img src="../../../assets/images/21d9bc2c79d44ba5dc56d7253a1a5062.png" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        
+      </ul>
+    </div>
+    <div class="tournament-bracket__round tournament-bracket__round--quarterfinals">
+      <h3 class="tournament-bracket__round-title">Quarterfinals</h3>
+      <ul class="tournament-bracket__list">
+        <li class="tournament-bracket__item">
+          <div class="tournament-bracket__match" tabindex="0">
+            <div class="player-item container1">
+              <div class="neumorphism-1">
+                <span>Ali Alkhatib</span>
+                <span
+                  style="font-size: 12px; padding: 2px 8px; border-radius: 15px; background-color: #2EDE7B; color: white; text-align: center;">In
+                  -Querter</span>
+              </div>
+              <div class="neumorphism-2">
+                <div class="neumorphism-3">
+                  <img src="../../../assets/images/21d9bc2c79d44ba5dc56d7253a1a5062.png" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="tournament-bracket__item">
+          <div class="tournament-bracket__match" tabindex="0">
+            <div class="player-item container1">
+              <div class="neumorphism-1">
+                <span>Ali Alkhatib</span>
+                <span
+                  style="font-size: 12px; padding: 2px 8px; border-radius: 15px; background-color: #2EDE7B; color: white; text-align: center;">In
+                  -Querter</span>
+              </div>
+              <div class="neumorphism-2">
+                <div class="neumorphism-3">
+                  <img src="../../../assets/images/21d9bc2c79d44ba5dc56d7253a1a5062.png" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="tournament-bracket__item">
+          <div class="tournament-bracket__match" tabindex="0">
+            <div class="player-item container1">
+              <div class="neumorphism-1">
+                <span>Ali Alkhatib</span>
+                <span
+                  style="font-size: 12px; padding: 2px 8px; border-radius: 15px; background-color: #2EDE7B; color: white; text-align: center;">In
+                  -Querter</span>
+              </div>
+              <div class="neumorphism-2">
+                <div class="neumorphism-3">
+                  <img src="../../../assets/images/21d9bc2c79d44ba5dc56d7253a1a5062.png" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="tournament-bracket__item">
+          <div class="tournament-bracket__match" tabindex="0">
+            <div class="player-item container1">
+              <div class="neumorphism-1">
+                <span>Ali Alkhatib</span>
+                <span
+                  style="font-size: 12px; padding: 2px 8px; border-radius: 15px; background-color: #2EDE7B; color: white; text-align: center;">In
+                  -Querter</span>
+              </div>
+              <div class="neumorphism-2">
+                <div class="neumorphism-3">
+                  <img src="../../../assets/images/21d9bc2c79d44ba5dc56d7253a1a5062.png" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+      </ul>
+    </div>
+    <div class="tournament-bracket__round tournament-bracket__round--semifinals">
+      <h3 class="tournament-bracket__round-title">Semifinals</h3>
+      <ul class="tournament-bracket__list">
+        <li class="tournament-bracket__item">
+          <div class="tournament-bracket__match" tabindex="0">
+            <div class="player-item container1">
+              <div class="neumorphism-1">
+                <span>Ali Alkhatib</span>
+                <span
+                  style="font-size: 12px; padding: 2px 8px; border-radius: 15px; background-color: #2EDE7B; color: white; text-align: center;">In
+                  -Querter</span>
+              </div>
+              <div class="neumorphism-2">
+                <div class="neumorphism-3">
+                  <img src="../../../assets/images/21d9bc2c79d44ba5dc56d7253a1a5062.png" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="tournament-bracket__item">
+          <div class="tournament-bracket__match" tabindex="0">
+            <div class="player-item container1">
+              <div class="neumorphism-1">
+                <span>Ali Alkhatib</span>
+                <span
+                  style="font-size: 12px; padding: 2px 8px; border-radius: 15px; background-color: #2EDE7B; color: white; text-align: center;">In
+                  -Querter</span>
+              </div>
+              <div class="neumorphism-2">
+                <div class="neumorphism-3">
+                  <img src="../../../assets/images/21d9bc2c79d44ba5dc56d7253a1a5062.png" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="tournament-bracket__round tournament-bracket__round--bronze">
+      <h3 class="tournament-bracket__round-title">Final</h3>
+      <ul class="tournament-bracket__list">
+        <li class="tournament-bracket__item">
+          <div class="tournament-bracket__match" tabindex="0">
+            <div class="player-item container1">
+              <div class="neumorphism-1">
+                <span>Ali Alkhatib</span>
+                <span
+                  style="font-size: 12px; padding: 2px 8px; border-radius: 15px; background-color: #2EDE7B; color: white; text-align: center;">In
+                  -Querter</span>
+              </div>
+              <div class="neumorphism-2">
+                <div class="neumorphism-3">
+                  <img src="../../../assets/images/21d9bc2c79d44ba5dc56d7253a1a5062.png" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+      </ul>
+    </div>
+    <!-- <div class="tournament-bracket__round tournament-bracket__round--gold">
+      <h3 class="tournament-bracket__round-title">Gold medal game</h3>
+      <ul class="tournament-bracket__list">
+        <li class="tournament-bracket__item">
+          <div class="tournament-bracket__match" tabindex="0">
+            <div class="player-item container1">
+              <div class="neumorphism-1">
+                <span>Ali Alkhatib</span>
+
+              </div>
+              <div class="neumorphism-2">
+                <div class="neumorphism-3">
+                  <img src="../../../assets/images/21d9bc2c79d44ba5dc56d7253a1a5062.png" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+      </ul>
+    </div> -->
+  </div>
+</div>

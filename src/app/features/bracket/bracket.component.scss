@@ -2,19 +2,20 @@
     height: 85vh;
     padding: 0 90px;
     display: flex;
-
+    align-items: center;
     .players {
         flex-grow: 1;
         height: 95%;
-        background-color: #ebebebcc;
+        background-color: #dde1e7;
         border-radius: 20px;
         margin-right: 12px;
+        align-items: center;
     }
 
     .bracket {
         flex-grow: 11;
         height: 95%;
-        background-color: #ebebebcc;
+        background-color: #dde1e7;
         border-radius: 20px;
         display: flex;
         flex-direction: column;
@@ -25,7 +26,7 @@
             border-radius: 20px;
             display: flex;
             align-items: center;
-            justify-content: center;
+            // justify-content: center;
             flex-direction: column;
             overflow-x: scroll;
             button {
@@ -65,26 +66,22 @@
     margin: 12px 32px;
     padding: 8px 18px;
     border-radius: 50px;
-    background: #FFF;
+
+    // background: #FFF;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: center;
 
     img {
-        width: 50px;
-        height: 50px;
         flex-shrink: 0;
-        width: 50px;
-        height: 50px;
+        width: 60%;
         flex-shrink: 0;
-        border-radius: 50px;
     }
 
     span {
-        margin: 0 28px;
-        color: #151716;
+        margin: 0 0 0 16px;
+        color: #5e5e5e;
         font-family: Inter;
-        font-size: 25px;
+        font-size: 16px;
         font-style: normal;
         font-weight: 600;
         line-height: normal;
@@ -93,5 +90,50 @@
     div {
         display: flex;
         align-items: center;
+        justify-content: center;
     }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+    flex-direction: row;
+    width: 65%;
+}
+
+.neumorphism-1 {
+    height: 40px;
+    width: 80%;
+    background-color: #dde1e7;
+    box-shadow: -3px -3px 7px #ffffff73, 3px 3px 5px rgb(94, 104, 121, .288);
+    border-radius: 35px;
+    justify-content: start!important;
+}
+
+.neumorphism-2 {
+    margin: 10px;
+    padding: 4px;
+    height: 55px;
+    width: 55px;
+    background-color: #dde1e7;
+    box-shadow: -3px -3px 7px #ffffff73,3px 3px 5px rgb(94, 104, 121, .288);
+    border-radius: 60px;
+    position: absolute;
+    right: 0;
+    text-align: center;
+}
+
+.neumorphism-3 {
+    height: 55px;
+    width: 55px;
+    background-color: #dde1e7;
+    box-shadow: inset -3px -3px 7px #ffffff73,inset 3px 3px 5px rgb(94, 104, 121, .288);
+    border-radius: 60px;
 }

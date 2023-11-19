@@ -1,0 +1,10 @@
+<mat-grid-list cols="4" rowHeight="140px">
+    <mat-grid-tile
+        *ngFor="let team of teams"
+        [colspan]="1"
+        [ngStyle]="{'background-color': team.id == selectedTeam ? '#dde1e7' : '#ffffff'}">
+        <div style="width: 140px; height: 140px; position: relative;">
+            <img src="{{team.url}}" alt="" style="width: 80%; height: 80%; position: absolute; top: 11%; left: 11%;">
+        </div>
+    </mat-grid-tile>
+  </mat-grid-list>

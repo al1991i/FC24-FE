@@ -8,6 +8,13 @@ import { HomeComponent } from './features/home/home.component';
 import { BracketComponent } from './features/bracket/bracket.component';
 import { AboutComponent } from './features/about/about.component';
 import { TournamentBracketComponentComponent } from './features/bracket/tournament-bracket-component/tournament-bracket-component.component';
+import { TeamsDialogComponent } from './features/teams-dialog/teams-dialog.component';
+
+import { MatMenuModule } from '@angular/material/menu';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialogModule } from '@angular/material/dialog';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,10 +23,15 @@ import { TournamentBracketComponentComponent } from './features/bracket/tourname
     BracketComponent,
     AboutComponent,
     TournamentBracketComponentComponent,
+    TeamsDialogComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatMenuModule,
+    MatGridListModule,
+    MatDialogModule
   ],
   exports: [TournamentBracketComponentComponent],
   providers: [],

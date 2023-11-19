@@ -1,15 +1,14 @@
-
 <header>
     <nav>
         <ul>
-            <li class="active">
-                <a>Home</a>
+            <li>
+                <a [routerLink]="['/home']" routerLinkActive="active">Home</a>
             </li>
             <li>
-                <a>Tournament Bracket</a>
+                <a [routerLink]="['/bracket']" routerLinkActive="active">Tournament Bracket</a>
             </li>
             <li>
-                <a>About</a>
+                <a [routerLink]="['/about']" routerLinkActive="active">About</a>
             </li>
         </ul>
     </nav>
@@ -20,8 +19,9 @@
                 <div class="notification-indicator"></div>
             </div>
         </div>
-        <img class="team-image" src="../../../assets/images/21d9bc2c79d44ba5dc56d7253a1a5062.png" alt="">
+        <img (click)="openDialog()" class="team-image"
+            src="../../../assets/images/21d9bc2c79d44ba5dc56d7253a1a5062.png" alt="">
         <img class="profile-image" src="../../../assets/images/9cf88cc006fd183491fc10fda59083a4.jpeg" alt="">
     </div>
 </header>
-<router-outlet></router-outlet> 
+<router-outlet></router-outlet>
