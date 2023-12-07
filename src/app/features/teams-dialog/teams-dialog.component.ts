@@ -1,5 +1,7 @@
-import { Component, Inject } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 export interface DialogData {
   selectedTeam: number;
@@ -8,7 +10,7 @@ export interface DialogData {
 export interface Team {
   id: number;
   name: string;
-  url: string;
+  imgUrl: string;
 }
 
 @Component({
@@ -16,80 +18,42 @@ export interface Team {
   templateUrl: './teams-dialog.component.html',
   styleUrls: ['./teams-dialog.component.scss']
 })
-export class TeamsDialogComponent {
+export class TeamsDialogComponent implements OnInit {
 
-  selectedTeam = 2
+  selectedTeam?: number;
+  teams: Team[] = [];
 
   constructor(
     public dialogRef: MatDialogRef<TeamsDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: DialogData
-  ) { }
+    @Inject(MAT_DIALOG_DATA) public data: DialogData,
+    private http: HttpClient, private spinner: NgxSpinnerService
+  ) {
+    this.selectedTeam = localStorage.getItem('teamId') ? +localStorage.getItem('teamId')! : 1;
+  }
+
+  ngOnInit(): void {
+    this.spinner.show()
+    this.http.get<Team[]>('http://localhost:8080/api/team').subscribe(teams => {
+      this.teams = teams
+      this.spinner.hide()
+    });
+  }
 
   onNoClick(): void {
     this.dialogRef.close();
   }
 
-  teams: Team[]  = [
-    {
-      id: 1,
-      name: 'Real Madrid',
-      url: '../../../assets/images/Manchester_City_FC.png'
-    },
-    {
-      id: 2,
-      name: 'Real Madrid',
-      url: '../../../assets/images/arsenal.png'
-    },
-    {
-      id: 1,
-      name: 'Real Madrid',
-      url: '../../../assets/images/barcelona.png'
-    },
-    {
-      id: 1,
-      name: 'Real Madrid',
-      url: '../../../assets/images/bayern.png'
-    },
-    {
-      id: 1,
-      name: 'Real Madrid',
-      url: '../../../assets/images/chealse.png'
-    },
-    {
-      id: 1,
-      name: 'Real Madrid',
-      url: '../../../assets/images/inter.png'
-    },  
-    {
-      id: 1,
-      name: 'Real Madrid',
-      url: '../../../assets/images/juventus.png'
-    },
-    {
-      id: 1,
-      name: 'Real Madrid',
-      url: '../../../assets/images/leverpool.png'
-    },
-    {
-      id: 1,
-      name: 'Real Madrid',
-      url: '../../../assets/images/manchesterunited.png'
-    },
-    {
-      id: 1,
-      name: 'Real Madrid',
-      url: '../../../assets/images/psg.png'
-    },
-    {
-      id: 1,
-      name: 'Real Madrid',
-      url: '../../../assets/images/realmadrid.png'
-    },
-    {
-      id: 1,
-      name: 'Real Madrid',
-      url: '../../../assets/images/acmilan.png'
-    },  
-  ]
-
+  onSelectTeam(team: Team) {
+    this.selectedTeam = team.id;
+    localStorage.setItem("teamId", team.id + "");
+    localStorage.setItem("imgUrl", team.imgUrl + "");
+    const body = {
+      username: localStorage.getItem('username'),
+      teamId: team.id
+    }
+    this.spinner.show()
+    this.http.put<any>('http://localhost:8080/api/player', body).subscribe(() => {
+      this.spinner.hide()
+    });
+  }
 }

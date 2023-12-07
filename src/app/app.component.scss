@@ -115,4 +115,13 @@ nav li a.active {
 
 ::ng-deep.mat-menu-panel {
     max-width: none !important;
-  }
+}
+
+::ng-deep.mat-simple-snackbar-action {
+    color: #2EDE7B;
+}
+
+::ng-deep.mat-snack-bar-container {
+    color: gray;
+    background-color: white;
+}

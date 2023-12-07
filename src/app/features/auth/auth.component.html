@@ -7,12 +7,14 @@
             <div>
                 <h1>Hello!</h1>
                 <h3>We will challenge for a <span>Prize</span></h3>
-                <form>
+                <form [formGroup]="formGroup">
                     <label for="email"> Email</label>
-                    <input id="email" type="text" placeholder="Enter email">
+                    <input id="email" type="email" placeholder="Enter email" formControlName="email">
+                    <label for="nickname"> Nickname</label>
+                    <input id="nickname" type="text" placeholder="Enter nickname" formControlName="fullName">
                     <label for="password">Password</label>
-                    <input id="password" type="password" placeholder="Enter password">
-                    <button>Login</button>
+                    <input id="password" type="password" placeholder="Enter password" formControlName="password">
+                    <button (click)="onSubmit()">Login</button>
                 </form>
             </div>
         </div>

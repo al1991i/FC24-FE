@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { TeamsDialogComponent } from './features/teams-dialog/teams-dialog.component';
+import { NavigationEnd, Router } from '@angular/router';
+import { filter } from 'rxjs';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-root',
@@ -8,12 +11,22 @@ import { TeamsDialogComponent } from './features/teams-dialog/teams-dialog.compo
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
   title = 'fc24';
   selectedTeam?: number;
-
-  constructor(public dialog: MatDialog) { }
+  isAuthView = false;
+  imgUrl!: string | null
+  constructor(public dialog: MatDialog, private router: Router) {
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        this.isAuthView = event.url === '/auth';
+      }
+    });
+  }
 
   ngOnInit(): void {
+    console.log(localStorage.getItem("imgUrl"))
+    this.imgUrl = localStorage.getItem("imgUrl");
   }
 
   openDialog(): void {
@@ -24,8 +37,17 @@ export class AppComponent {
     });
 
     dialogRef.afterClosed().subscribe(selectedTeam => {
-      console.log('The dialog was closed');
-      this.selectedTeam = selectedTeam;
+      console.log(localStorage.getItem("imgUrl"))
+      this.imgUrl = localStorage.getItem("imgUrl");
     });
+  }
+
+  logout() {
+    localStorage.removeItem('token')
+    localStorage.removeItem('isLoggedIn')
+    localStorage.removeItem('imgUrl')
+    localStorage.removeItem('username')
+    localStorage.removeItem('teamId')
+    this.router.navigate(['/auth'])
   }
 }
