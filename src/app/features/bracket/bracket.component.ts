@@ -25,16 +25,16 @@ export class BracketComponent implements OnInit {
   }
   draw() {
     this.spinner.show()
-    this.http.post<any>('http://localhost:8080/api/championship/draw', {"championshipId": 1}).subscribe(() => {
+    this.http.post<any>('http://139.177.179.246:8085/api/championship/draw', {"championshipId": 1}).subscribe(() => {
       this.spinner.hide()
     })
   }
   ngOnInit(): void {
     this.spinner.show()
-    this.http.get<Player[]>('http://localhost:8080/api/player').subscribe(players => {
+    this.http.get<Player[]>('http://139.177.179.246:8085/api/player').subscribe(players => {
       this.players = players
     })
-    this.http.get<Match[]>('http://localhost:8080/api/match').subscribe(matches => {
+    this.http.get<Match[]>('http://139.177.179.246:8085/api/match').subscribe(matches => {
       this.matches = matches;
       this.spinner.hide()
     });

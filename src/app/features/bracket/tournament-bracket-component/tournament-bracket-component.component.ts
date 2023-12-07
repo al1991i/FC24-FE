@@ -125,7 +125,7 @@ export class TournamentBracketComponentComponent implements OnInit {
       this.matchResult.winnerPlayerId = winnerId;
       this.spinner.show();
       const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
-      this.http.put<any>('http://localhost:8080/api/match', JSON.stringify(this.matchResult), { headers: headers }).subscribe(response => {
+      this.http.put<any>('http://139.177.179.246:8085/api/match', JSON.stringify(this.matchResult), { headers: headers }).subscribe(response => {
         console.log('response')
         console.log(response)
         this.spinner.hide()

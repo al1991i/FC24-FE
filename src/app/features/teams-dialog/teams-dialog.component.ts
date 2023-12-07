@@ -33,7 +33,7 @@ export class TeamsDialogComponent implements OnInit {
 
   ngOnInit(): void {
     this.spinner.show()
-    this.http.get<Team[]>('http://localhost:8080/api/team').subscribe(teams => {
+    this.http.get<Team[]>('http://139.177.179.246:8085/api/team').subscribe(teams => {
       this.teams = teams
       this.spinner.hide()
     });
@@ -52,7 +52,7 @@ export class TeamsDialogComponent implements OnInit {
       teamId: team.id
     }
     this.spinner.show()
-    this.http.put<any>('http://localhost:8080/api/player', body).subscribe(() => {
+    this.http.put<any>('http://139.177.179.246:8085/api/player', body).subscribe(() => {
       this.spinner.hide()
     });
   }
