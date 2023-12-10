@@ -5,6 +5,7 @@ import { Match } from './models/matches';
 import { Player } from './models/players';
 import { TeamsService } from 'src/app/shared/services/teams.service';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-bracket',
@@ -12,29 +13,31 @@ import { NgxSpinnerService } from 'ngx-spinner';
   styleUrls: ['./bracket.component.scss']
 })
 export class BracketComponent implements OnInit {
+
   treeData!: TreeNode[];
   matches!: Match[];
   players!: Player[];
-  
+
   constructor(private http: HttpClient, private teamService: TeamsService, private spinner: NgxSpinnerService) { }
-  
+
   userAllowedToDraw(): boolean {
-    console.log("localStorage.getItem('username')")
-    console.log(localStorage.getItem('username'))
     return localStorage.getItem('username') == "a.alkhatib@dg-cash.com"
   }
   draw() {
     this.spinner.show()
-    this.http.post<any>('http://139.177.179.246:8085/api/championship/draw', {"championshipId": 1}).subscribe(() => {
-      this.spinner.hide()
+    this.http.post<any>(environment.fc24Url + 'api/championship/draw', { "championshipId": 1 }).subscribe(() => {
+      this.http.get<Match[]>(environment.fc24Url + 'api/match').subscribe(matches => {
+        this.matches = matches;
+        this.spinner.hide()
+      });
     })
   }
   ngOnInit(): void {
     this.spinner.show()
-    this.http.get<Player[]>('http://139.177.179.246:8085/api/player').subscribe(players => {
+    this.http.get<Player[]>(environment.fc24Url + 'api/player').subscribe(players => {
       this.players = players
     })
-    this.http.get<Match[]>('http://139.177.179.246:8085/api/match').subscribe(matches => {
+    this.http.get<Match[]>(environment.fc24Url + 'api/match').subscribe(matches => {
       this.matches = matches;
       this.spinner.hide()
     });
@@ -42,6 +45,13 @@ export class BracketComponent implements OnInit {
 
   getTeamUrl(name: String) {
     return this.teamService.getTeamUrl(name);
+  }
+
+  scoreProvided() {
+    this.http.get<Match[]>(environment.fc24Url + 'api/match').subscribe(matches => {
+      this.matches = matches;
+      this.spinner.hide()
+    });
   }
 }
 

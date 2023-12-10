@@ -1,10 +1,11 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Match } from '../models/matches';
 import { TeamsService } from 'src/app/shared/services/teams.service';
 import { Player } from '../models/players';
 import { MatchResult } from '../models/match-result';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-tournament-bracket-component',
@@ -15,6 +16,8 @@ export class TournamentBracketComponentComponent implements OnInit {
   @Input() treeData!: TreeNode[];
   @Input() matches!: Match[];
   @Input() editable!: boolean;
+  @Output() scoreProvided: EventEmitter<any> = new EventEmitter();
+
   private matchResult: MatchResult = { matchId: -1, awayGoals: -1, awayId: -1, homeGoals: -1, homeId: -1, winnerPlayerId: -1 }
 
   public selectedNodeId = 0;
@@ -92,7 +95,6 @@ export class TournamentBracketComponentComponent implements OnInit {
   }
 
   getWinner() {
-    console.log(this.matches.filter(match => match.round == 'Final').flatMap(match => [match.winnerPlayer]))
     return this.matches.filter(match => match.round == 'Final').flatMap(match => [match.winnerPlayer])
   }
 
@@ -106,7 +108,6 @@ export class TournamentBracketComponentComponent implements OnInit {
   }
 
   focusOutFunction(player: Player, $event: any) {
-    console.log(player, $event.target.value)
     if (!(this.matchResult.matchId) && player.matchId != this.matchResult.matchId) {
       // display error message 
     }
@@ -125,10 +126,10 @@ export class TournamentBracketComponentComponent implements OnInit {
       this.matchResult.winnerPlayerId = winnerId;
       this.spinner.show();
       const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
-      this.http.put<any>('http://139.177.179.246:8085/api/match', JSON.stringify(this.matchResult), { headers: headers }).subscribe(response => {
-        console.log('response')
-        console.log(response)
-        this.spinner.hide()
+      this.http.put<any>(environment.fc24Url + 'api/match', JSON.stringify(this.matchResult), { headers: headers }).subscribe(response => {
+        this.matchResult = { matchId: -1, awayGoals: -1, awayId: -1, homeGoals: -1, homeId: -1, winnerPlayerId: -1 }
+        this.scoreProvided.emit();
+        // this.spinner.hide()
       })
     }
   }

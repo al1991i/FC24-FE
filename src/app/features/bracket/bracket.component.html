@@ -22,7 +22,7 @@
         </div>
         <div class="bracket-tree">
             <button (click)="draw()" *ngIf="userAllowedToDraw() && (!matches || !matches.length)">Draw</button>
-            <app-tournament-bracket-component *ngIf="matches && matches.length" [matches]="matches" style="width: 100%;"></app-tournament-bracket-component>
+            <app-tournament-bracket-component (scoreProvided)="scoreProvided()" *ngIf="matches && matches.length" [matches]="matches" style="width: 100%;"></app-tournament-bracket-component>
         </div>
     </div>
 </div>

@@ -25,7 +25,6 @@ export class AppComponent {
   }
 
   ngOnInit(): void {
-    console.log(localStorage.getItem("imgUrl"))
     this.imgUrl = localStorage.getItem("imgUrl");
   }
 
@@ -37,7 +36,6 @@ export class AppComponent {
     });
 
     dialogRef.afterClosed().subscribe(selectedTeam => {
-      console.log(localStorage.getItem("imgUrl"))
       this.imgUrl = localStorage.getItem("imgUrl");
     });
   }

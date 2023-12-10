@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-auth',
@@ -30,7 +31,7 @@ export class AuthComponent implements OnInit {
     const payload = { "username": email, "password": password, "accountType": "PLAYER" }
     const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
     this.spinner.show()
-    this.http.post<any>('http://139.177.179.246:8086/api/v1/auth/signup', JSON.stringify(payload), { headers: headers })
+    this.http.post<any>(environment.gatewayUrl + 'api/v1/auth/signup', JSON.stringify(payload), { headers: headers })
       .subscribe(
         data => {
           localStorage.setItem('token', data.token);
@@ -43,20 +44,19 @@ export class AuthComponent implements OnInit {
             fullName: fullName,
             teamId: 1
           }
-          this.http.post<any>('http://139.177.179.246:8085/api/player', body).subscribe(() => {
+          this.http.post<any>(environment.fc24Url + 'api/player', body).subscribe(() => {
             this.router.navigate(['/home'])
             this.spinner.hide()
           });
         },
         error => {
-          this.http.post<any>('http://139.177.179.246:8086/api/v1/auth/signin', JSON.stringify(payload), { headers: headers })
+          this.http.post<any>(environment.gatewayUrl + 'api/v1/auth/signin', JSON.stringify(payload), { headers: headers })
             .subscribe(
               data => {
                 localStorage.setItem('token', data.token);
                 localStorage.setItem('username', data.username);
                 localStorage.setItem('isLoggedIn', 'true');
-                this.http.get<any>('http://139.177.179.246:8085/api/player/' + data.username).subscribe(response => {
-                console.log(response)  
+                this.http.get<any>(environment.fc24Url + 'api/player/' + data.username).subscribe(response => {
                 localStorage.setItem('teamId', response.team.id);
                 localStorage.setItem('imgUrl', response.team.imgUrl);
                   this.router.navigate(['/home'])

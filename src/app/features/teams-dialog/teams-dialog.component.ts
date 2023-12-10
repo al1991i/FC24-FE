@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { environment } from 'src/environments/environment';
 
 export interface DialogData {
   selectedTeam: number;
@@ -33,7 +34,7 @@ export class TeamsDialogComponent implements OnInit {
 
   ngOnInit(): void {
     this.spinner.show()
-    this.http.get<Team[]>('http://139.177.179.246:8085/api/team').subscribe(teams => {
+    this.http.get<Team[]>(environment.fc24Url + 'api/team').subscribe(teams => {
       this.teams = teams
       this.spinner.hide()
     });
@@ -52,7 +53,7 @@ export class TeamsDialogComponent implements OnInit {
       teamId: team.id
     }
     this.spinner.show()
-    this.http.put<any>('http://139.177.179.246:8085/api/player', body).subscribe(() => {
+    this.http.put<any>(environment.fc24Url + 'api/player', body).subscribe(() => {
       this.spinner.hide()
     });
   }
