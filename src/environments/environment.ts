@@ -6,7 +6,7 @@ export const environment = {
   production: false,
   // fc24Url: 'http://localhost:8085/',
   // gatewayUrl: 'http://localhost:8086/'
-  fc24Url: 'http://139.177.179.246:8086/',
+  fc24Url: 'http://139.177.179.246:8085/',
   gatewayUrl: 'http://139.177.179.246:8086/'
 };
 
